@@ -17,8 +17,13 @@
 		BD99997129BF3CE5002C5EDA /* WifiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99997029BF3CE5002C5EDA /* WifiModels.swift */; };
 		BD99997329BF3D0E002C5EDA /* VisualModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99997229BF3D0E002C5EDA /* VisualModels.swift */; };
 		BD99997529BF5E77002C5EDA /* WifiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99997429BF5E77002C5EDA /* WifiListView.swift */; };
+		BD9CD12E29CCFAD90036BE05 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CD12D29CCFAD90036BE05 /* MetalViewController.swift */; };
+		BDB40A8329CA93D8003A21EE /* WifiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB40A8229CA93D8003A21EE /* WifiViewController.swift */; };
 		BDC398F929C34D6500FE44DD /* SimdUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC398F829C34D6500FE44DD /* SimdUtils.swift */; };
 		BDC398FB29C3E43F00FE44DD /* LiveFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC398FA29C3E43F00FE44DD /* LiveFeedView.swift */; };
+		BDE9F17629D64D7F00B7287D /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F17529D64D7F00B7287D /* ExtensionUIColor.swift */; };
+		BDE9F17829D6518A00B7287D /* GridRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F17729D6518A00B7287D /* GridRenderer.swift */; };
+		BDE9F17A29D651B000B7287D /* PointRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F17929D651B000B7287D /* PointRenderer.swift */; };
 		BDF4974E298C3D7F006CF8B3 /* WiFi_Robot_ControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4974D298C3D7F006CF8B3 /* WiFi_Robot_ControllerApp.swift */; };
 		BDF49750298C3D7F006CF8B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4974F298C3D7F006CF8B3 /* ContentView.swift */; };
 		BDF49752298C3D81006CF8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF49751298C3D81006CF8B3 /* Assets.xcassets */; };
@@ -57,8 +62,13 @@
 		BD99997029BF3CE5002C5EDA /* WifiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiModels.swift; sourceTree = "<group>"; };
 		BD99997229BF3D0E002C5EDA /* VisualModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualModels.swift; sourceTree = "<group>"; };
 		BD99997429BF5E77002C5EDA /* WifiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiListView.swift; sourceTree = "<group>"; };
+		BD9CD12D29CCFAD90036BE05 /* MetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
+		BDB40A8229CA93D8003A21EE /* WifiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiViewController.swift; sourceTree = "<group>"; };
 		BDC398F829C34D6500FE44DD /* SimdUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimdUtils.swift; sourceTree = "<group>"; };
 		BDC398FA29C3E43F00FE44DD /* LiveFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFeedView.swift; sourceTree = "<group>"; };
+		BDE9F17529D64D7F00B7287D /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		BDE9F17729D6518A00B7287D /* GridRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRenderer.swift; sourceTree = "<group>"; };
+		BDE9F17929D651B000B7287D /* PointRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRenderer.swift; sourceTree = "<group>"; };
 		BDF4974A298C3D7F006CF8B3 /* WiFi Robot Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi Robot Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF4974D298C3D7F006CF8B3 /* WiFi_Robot_ControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFi_Robot_ControllerApp.swift; sourceTree = "<group>"; };
 		BDF4974F298C3D7F006CF8B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +112,8 @@
 				BD99996429BCF40A002C5EDA /* Shaders.metal */,
 				BD99996329BCF3E3002C5EDA /* definitions.h */,
 				BD99995F29BCE767002C5EDA /* Renderer.swift */,
+				BDE9F17729D6518A00B7287D /* GridRenderer.swift */,
+				BDE9F17929D651B000B7287D /* PointRenderer.swift */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -137,10 +149,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BDB40A8129CA937E003A21EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDB40A8229CA93D8003A21EE /* WifiViewController.swift */,
+				BD9CD12D29CCFAD90036BE05 /* MetalViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		BDC398F729C34D5500FE44DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				BDC398F829C34D6500FE44DD /* SimdUtils.swift */,
+				BDE9F17529D64D7F00B7287D /* ExtensionUIColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -168,6 +190,7 @@
 		BDF4974C298C3D7F006CF8B3 /* WiFi Robot Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BDB40A8129CA937E003A21EE /* Controllers */,
 				BDC398F729C34D5500FE44DD /* Utils */,
 				BD99996F29BF3CD5002C5EDA /* Models */,
 				BD99996829BD3EA5002C5EDA /* Network */,
@@ -339,11 +362,16 @@
 				BD99996C29BE7A23002C5EDA /* WifiDataProvider.swift in Sources */,
 				BDC398F929C34D6500FE44DD /* SimdUtils.swift in Sources */,
 				BD99996029BCE767002C5EDA /* Renderer.swift in Sources */,
+				BDB40A8329CA93D8003A21EE /* WifiViewController.swift in Sources */,
 				BDC398FB29C3E43F00FE44DD /* LiveFeedView.swift in Sources */,
+				BDE9F17629D64D7F00B7287D /* ExtensionUIColor.swift in Sources */,
+				BD9CD12E29CCFAD90036BE05 /* MetalViewController.swift in Sources */,
 				BDF49750298C3D7F006CF8B3 /* ContentView.swift in Sources */,
 				BD99996A29BD3EE4002C5EDA /* BluetoothManager.swift in Sources */,
+				BDE9F17829D6518A00B7287D /* GridRenderer.swift in Sources */,
 				BD99996229BCEC2A002C5EDA /* MetalView.swift in Sources */,
 				BD99997129BF3CE5002C5EDA /* WifiModels.swift in Sources */,
+				BDE9F17A29D651B000B7287D /* PointRenderer.swift in Sources */,
 				BD99997329BF3D0E002C5EDA /* VisualModels.swift in Sources */,
 				BD77888B29BA55E30069C001 /* GridProvider.swift in Sources */,
 				BDF4974E298C3D7F006CF8B3 /* WiFi_Robot_ControllerApp.swift in Sources */,

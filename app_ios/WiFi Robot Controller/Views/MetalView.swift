@@ -10,10 +10,15 @@ import MetalKit
 import SwiftUI
 
 struct MetalView: UIViewRepresentable {
+    let wifiSelectionController: WifiViewController
+    let viewController: MetalViewController
+    
     @ObservedObject var mapModel = GridProvider()
     
-    init() {
+    init(wifiController: WifiViewController, viewController: MetalViewController) {
         print("Metal View initialized!")
+        self.wifiSelectionController = wifiController
+        self.viewController = viewController
     }
     
     func makeCoordinator() -> Renderer {
@@ -25,10 +30,11 @@ struct MetalView: UIViewRepresentable {
         metalView.delegate = context.coordinator
         metalView.isOpaque = false
         metalView.clearColor = MTLClearColor(red: 0.0, green: 0.5, blue: 0.0, alpha: 1.0)
+    
         return metalView
     }
     
     func updateUIView(_ uiView: MTKView, context: Context) {
-        
     }
+
 }

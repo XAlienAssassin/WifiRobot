@@ -21,3 +21,8 @@ struct Vertex {
 struct FragmentUniforms {
     simd_float4 clearColor;
 };
+
+struct WifiStrengthPoint {
+    simd_float2 pos;
+    uint8_t strength;
+};

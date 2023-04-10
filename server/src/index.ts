@@ -5,6 +5,7 @@ import { TCPServer } from './servers/TCPServer';
 import TcpMapDelegate from './TcpDelegates/TcpMapDelegate';
 import TcpWifiDelegate from './TcpDelegates/TcpWifiDelegate';
 import * as dotenv from 'dotenv'
+import { CreateMockWifiRun } from './utils/mock';
 dotenv.config()
 
 const db_url = 'mongodb://localhost:27017';
@@ -41,7 +42,18 @@ app.get(`/api/runs`, async(req, res) => {
 
 app.listen(3000, async () => {
 	// await connectDb();
+
+	if(process.env.USE_MOCK == "true") {
+		//await upsertMockData();
+	}
 	socketServer.listen();
 	wifiServer.listen();
 	console.log('The application is listening on port 3000');
 });
+
+async function upsertMockData() {
+	//Create a mock run
+	let wifiRun = CreateMockWifiRun();
+	const run = new WifiRun(wifiRun);
+	await run.save()
+}

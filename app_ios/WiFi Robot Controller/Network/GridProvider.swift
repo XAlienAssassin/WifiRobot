@@ -22,6 +22,7 @@ class GridProvider: ObservableObject, NetworkDelegate {
         DispatchQueue.main.async {
             do {
                 self.occupancyGrid = try decoder.decode(OccupancyGrid.self, from: data.data(using: .utf8)!)
+                //self.occupancyGrid = self.generateFakeGrid(dim: 20)
             } catch let error {
                 print("Error occured whilst decoding incoming map collection: \(error)")
             }
@@ -34,7 +35,7 @@ class GridProvider: ObservableObject, NetworkDelegate {
     }
     
     private func generateFakeGrid(dim: Int) -> OccupancyGrid {
-        var temp = OccupancyGrid(width: dim, height: dim, data: [])
+        var temp = OccupancyGrid(width: dim, height: dim, data: [], resolution: 0.5)
         
         for _ in 0..<dim {
             for _ in 0..<dim {

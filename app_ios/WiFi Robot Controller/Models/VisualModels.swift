@@ -11,6 +11,7 @@ struct OccupancyGrid: Codable {
     var width: Int
     var height: Int
     var data: [Int8]
+    var resolution: Float
 }
 
 struct Vector3D: Hashable, Codable {

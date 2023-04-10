@@ -17,3 +17,4 @@ func MakeScaleMatrix(xScale: Float, yScale: Float) -> simd_float4x4 {
     
     return float4x4(rows: rows)
 }
+

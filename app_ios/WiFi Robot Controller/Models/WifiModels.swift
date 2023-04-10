@@ -29,3 +29,9 @@ struct WifiPoint: Hashable {
     var position: Vector3D
     var timestamp: Date
 }
+
+struct WifiSelection {
+    var label: String
+    var essid: String
+    var points: [WifiPoint]
+}

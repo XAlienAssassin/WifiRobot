@@ -22,7 +22,7 @@ vertex Fragment vertexShader(
     Vertex input = vertexArray[vid];
     
     Fragment output;
-    output.position = float4(input.position.x, input.position.y, 0, 1) * view;
+    output.position = view * float4(input.position.x, input.position.y, 0, 1);
     output.texCoord = input.texCoord;
     
     return output;
@@ -31,7 +31,8 @@ vertex Fragment vertexShader(
 fragment float4 fragmentShader(
                                Fragment input [[stage_in]],
                                const device FragmentUniforms &uniforms [[buffer(0)]],
-                               texture2d<int> texture [[texture(0)]])
+                               texture2d<int> texture [[texture(0)]],
+                               texture2d<int> wifiMap [[texture(1)]])
 {
     constexpr sampler textureSampler(mag_filter::linear, min_filter::linear);
     
@@ -39,6 +40,6 @@ fragment float4 fragmentShader(
     float colorValue = (pixelValue.r / 125.0);
     
     float4 drawColor = float4(colorValue, colorValue, colorValue, 1.0);
-                               
+                            
     return mix(drawColor, uniforms.clearColor, pixelValue.r < 0 ? 1.0 : 0.0);
 }
